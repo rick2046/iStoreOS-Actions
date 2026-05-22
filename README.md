@@ -28,10 +28,21 @@
 > 
 > 使用此仓库必须设置机密token，Actions云构建固件时需要用到，通常在仓库设置里面。机密键名为 **`GH_TOKEN`**（严禁在仓库可视代码中填写，否则后果自负）
 > 配置 **`GH_TOKEN`**过程如下：
-> 在 GitHub Actions 中設置 GH_TOKEN 是確保自動化編譯腳本擁有存取權限（如發布 Release 或下載私有組件）的關鍵步驟。以下是設置流程：設置 GH_TOKEN 步驟打開您的 GitHub 項目倉庫。點擊頂部導覽列的 Settings (設定)。在左側選單中找到 Secrets and variables，點擊展開並選擇 Actions。點擊右側的 New repository secret 按鈕。在 Name 欄位輸入：GH_TOKEN。在 Secret 欄位貼入您的 Personal Access Token (PAT)。點擊 Add secret 保存。
+> 在 GitHub Actions 中設置 GH_TOKEN 是確保自動化編譯腳本擁有存取權限（如發布 Release 或下載私有組件）的關鍵步驟。以下是設置流程：
+> 設置 GH_TOKEN 步驟打開您的 GitHub 項目倉庫。點擊頂部導覽列的 Settings (設定)。
+> 在左側選單中找到 Secrets and variables，點擊展開並選擇 Actions。點擊右側的 New repository secret 按鈕。
+> 在 Name 欄位輸入：GH_TOKEN。在 Secret 欄位貼入您的 Personal Access Token (PAT)。（如何获取PAT，下面有教程）
+> 點擊 Add secret 保存。
 > 
 配置 **`GH_TOKEN`**需要Personal Access Token (PAT)，生成过程如下：
-> 獲取 Personal Access Token (PAT) 的步驟如下：1. 進入開發者設置點擊 GitHub 頁面右上角的 個人頭像。點擊 Settings (設定)。滾動到左側菜單最底部，點擊 Developer settings。2. 生成 Token (Classic 模式)雖然 GitHub 推出了細粒度 Token，但對於編譯腳本，使用 Tokens (classic) 兼容性最好：點擊 Personal access tokens -> Tokens (classic)。點擊右側的 Generate new token -> 選擇 Generate new token (classic)。3. 配置權限與有效期Note: 輸入用途，例如 Actions_Build_iStore。Expiration: 建議選擇 90 days 或 No expiration（長期有效）。Select scopes (勾選權限)：✅ repo (必選：控制私有倉庫及發布 Release)。✅ workflow (必選：允許更新 GitHub Actions 文件)。✅ write:packages (可選：若需上傳到 GitHub Packages)。4. 保存與複製點擊底部的 Generate token。⚠️ 重要：生成的 Token 只會顯示這一次，請立即複製並保存到安全的地方。
+> 獲取 Personal Access Token (PAT) 的步驟如下：
+> 1. 進入開發者設置點擊 GitHub 頁面右上角的 個人頭像。點擊 Settings (設定)。滾動到左側菜單最底部，點擊 Developer settings。
+> 2. 生成 Token (Classic 模式)雖然 GitHub 推出了細粒度 Token，但對於編譯腳本，使用 Tokens (classic) 兼容性最好：點擊 Personal access tokens -> Tokens (classic)。點擊右側的 Generate new token -> 選擇 Generate new token (classic)。
+> 3. 配置權限與有效期Note: 輸入用途，例如 Actions_Build_iStore。Expiration: 建議選擇 90 days 或 No expiration（長期有效）。Select scopes (勾選權限)：
+>    ✅ repo (必選：控制私有倉庫及發布 Release)。
+>    ✅ workflow (必選：允許更新 GitHub Actions 文件)。
+>    ✅ write:packages (可選：若需上傳到 GitHub Packages)。
+> 4. 保存與複製點擊底部的 Generate token。⚠️ 重要：生成的 Token 只會顯示這一次，請立即複製並保存到安全的地方。
 ---
 
 ## 😅 第三方插件 [![](https://img.shields.io/badge/-第三方插件-FFFFFF.svg)](#-第三方插件-)
